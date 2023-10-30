@@ -20,8 +20,8 @@ extension BookSummary {
         title: "title",
         imageName: "book_cover",
         chapters: [
-            .init(title: "Chapter 1", audioFileName: "one", duration: 60),
-            .init(title: "Chapter 2", audioFileName: "two", duration: 70),
+            .init(title: "Chapter 1. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text", audioFileName: "summary_0", duration: 180),
+            .init(title: "Chapter 2", audioFileName: "summary_1", duration: 102),
         ]
     )
 }
@@ -37,21 +37,21 @@ struct PlayerFeature: Reducer {
 
             var title: String {
                 switch self {
-                case .x05: return "0.5x"
-                case .x075: return "0.75x"
-                case .x1: return "1x"
-                case .x15: return "1.5x"
-                case .x2: return "2x"
+                case .x05: return "x0.5"
+                case .x075: return "x0.75"
+                case .x1: return "x1"
+                case .x15: return "x1.5"
+                case .x2: return "x2"
                 }
             }
 
-            var speedMultiplier: Double {
+            var speedMultiplier: Float {
                 switch self {
                 case .x05: return 0.5
                 case .x075: return 0.75
                 case .x1: return 1
                 case .x15: return 1.5
-                case .x2: return 2
+                case .x2: return 1.99 // 2 is not working correctly
                 }
             }
         }
@@ -64,12 +64,21 @@ struct PlayerFeature: Reducer {
         }
 
         var isPlaying: Bool = false
-        var chapterProgress: Double = 0
+        var playbackPosition: PlaybackPosition
         var playbackSpeed: PlaybackSpeed = .x1
+
+        init(bookSummary: BookSummary) {
+            self.bookSummary = bookSummary
+            if let firstChapter = bookSummary.chapters.first {
+                playbackPosition = .init(currentTime: 0, duration: firstChapter.duration)
+            } else {
+                playbackPosition = .init(currentTime: 0, duration: 0)
+            }
+        }
     }
 
     enum Action: Equatable {
-//        case audioPlayerClient(TaskResult<Bool>)
+        case audioPlayerClient(PlaybackState)
 
         case playButtonTapped
         case pauseButtonTapped
@@ -84,80 +93,109 @@ struct PlayerFeature: Reducer {
 
         case speedButtonTapped
 
-        case timerUpdated(TimeInterval)
         case updateChapterIfNeeded
     }
 
-//    @Dependency(\.audioPlayer) var audioPlayer
+    @Dependency(\.audioPlayer) var audioPlayer
     @Dependency(\.continuousClock) var clock
-    private enum CancelID { case play }
+    private enum CancelID { case play, seek }
 
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+            case let .audioPlayerClient(playback):
+                switch playback {                    
+                case let .playing(position):
+                    state.playbackPosition = position
+                    return .none
+                case let .pause(position):
+                    state.playbackPosition = position
+                    return .none
+                case .stop:
+                    return .none
+                case let .error(message):
+                    print("Playback error: \(message ?? "nil")")
+                    return .none
+                case .finish:
+                    state.playbackPosition = .init(
+                        currentTime: state.currentChapter?.duration ?? 0,
+                        duration: state.currentChapter?.duration ?? 0
+                    )
+                    return .send(.updateChapterIfNeeded, animation: .default)
+                }
+
             case .playButtonTapped:
                 state.isPlaying = true
-//                var start: TimeInterval = state.chapterProgress * (state.currentChapter?.duration ?? 0)
 
-                return .run { /* [url = state.url] */ send in
-//                    async let playAudio: Void = send(
-//                        .audioPlayerClient(TaskResult { try await self.audioPlayer.play(url) })
-//                    )
+                return .run { [fileName = state.currentChapter?.audioFileName, playbackPosition = state.playbackPosition, speed = state.playbackSpeed] send in
+                    let url = Bundle.main.url(forResource: fileName, withExtension: "mp3")!
 
-                    let tickTime = 0.5
-
-                    for await _ in clock.timer(interval: .milliseconds(500)) {
-                        await send(.timerUpdated(tickTime))
+                    for await playback in self.audioPlayer.play(playbackPosition, url, speed.speedMultiplier) {
+                        await send(.audioPlayerClient(playback))
                     }
-
-//                    await playAudio
                 }
                 .cancellable(id: CancelID.play, cancelInFlight: true)
 
             case .pauseButtonTapped:
                 state.isPlaying = false
-                return .cancel(id: CancelID.play)
+                return .run { _ in
+                    await audioPlayer.pause()
+                }
+                .merge(with: .cancel(id: CancelID.play))
+
             case .fastForwardButtonTapped:
-                // TODO: self.audioPlayer.update
-                return .send(.timerUpdated(10))
+                var playbackPosition = state.playbackPosition
+                playbackPosition.currentTime += 10
+                return .run { [playbackPosition] _ in
+                    await audioPlayer.seekProgress(playbackPosition.progress)
+                }
             case .rewindButtonTapped:
-                // TODO: self.audioPlayer.update
-                return .send(.timerUpdated(-5))
+                var playbackPosition = state.playbackPosition
+                playbackPosition.currentTime -= 5
+                return .run { [playbackPosition] _ in
+                    await audioPlayer.seekProgress(playbackPosition.progress)
+                }
             case let .progressSliderMoved(progress):
-                state.chapterProgress = progress
-                // TODO: self.audioPlayer.update
-                return .none
+                var playbackPosition = state.playbackPosition
+                playbackPosition.currentTime = progress * playbackPosition.duration
+                state.playbackPosition = playbackPosition
+                return .run { [playbackPosition] _ in
+                    await audioPlayer.seekProgress(playbackPosition.progress)
+                }
+                .cancellable(id: CancelID.seek, cancelInFlight: true)
             case .nextChapterButtonTapped:
-                state.chapterProgress = 1
+                state.playbackPosition = .init(
+                    currentTime: state.currentChapter?.duration ?? 0,
+                    duration: state.currentChapter?.duration ?? 0
+                )
                 return .send(.updateChapterIfNeeded)
             case .previousChapterButtonTapped:
                 guard state.currentChapterIndex > 0 else { return .none }
-                state.chapterProgress = 0
                 state.currentChapterIndex -= 1
-                // TODO: self.audioPlayer.update
+                state.playbackPosition = .init(currentTime: 0, duration: state.currentChapter?.duration ?? 0)
+                if state.isPlaying {
+                    return .send(.playButtonTapped)
+                }
                 return .none
             case .speedButtonTapped:
                 state.playbackSpeed = state.playbackSpeed == State.PlaybackSpeed.allCases.last
                     ? State.PlaybackSpeed.allCases.first!
                     : State.PlaybackSpeed.allCases.first { $0.speedMultiplier > state.playbackSpeed.speedMultiplier }!
 
-                // TODO: self.audioPlayer.update
-
-                return .none
-            case let .timerUpdated(tickTime):
-                guard state.isPlaying, let currentChapter = state.currentChapter else { return .none }
-                let time = max(0, state.chapterProgress * currentChapter.duration + tickTime)
-                state.chapterProgress = min(1, time / currentChapter.duration)
-                return .send(.updateChapterIfNeeded)
+                return .run { [speed = state.playbackSpeed.speedMultiplier] send in
+                    await audioPlayer.speed(speed)
+                }
             case .updateChapterIfNeeded:
-                if state.chapterProgress == 1 {
+                if state.playbackPosition.progress == 1 {
                     state.currentChapterIndex = (state.currentChapterIndex + 1) % state.bookSummary.chapters.count
                     if state.currentChapterIndex == 0 {
                         // stoping playback so summary is fully listened to
                         state.isPlaying = false
                     }
-                    state.chapterProgress = 0
-                    // TODO: self.audioPlayer.update
+                    state.playbackPosition = .init(currentTime: 0, duration: state.currentChapter?.duration ?? 0)
+                    if state.isPlaying {
+                        return .send(.playButtonTapped)
+                    }
                 }
 
                 return .none
@@ -171,32 +209,20 @@ struct PlayerView: View {
 
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
-            let duration = viewStore.state.currentChapter?.duration
-            let currentTime: TimeInterval = {
-                let duration = duration ?? 0
-                if duration > 0 {
-                    return min(duration, viewStore.state.chapterProgress * duration)
-                } else {
-                    return 0
-                }
-            }()
-            let timeLeft = (duration ?? 0) - currentTime
-
+            let duration = viewStore.state.playbackPosition.duration
+            let currentTime = viewStore.state.playbackPosition.currentTime
+            let timeLeft = viewStore.state.playbackPosition.duration - currentTime
 
             VStack(alignment: .center) {
                 // MARK: - Book image
-                GeometryReader {
-                    let size = $0.size
 
-                    VStack(alignment: .center){
-                        Image(viewStore.bookSummary.imageName)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: size.width / 2, alignment: .center)
-                    }
-                    .frame(maxWidth: .infinity)
-                }
-                .padding()
+                Image(viewStore.bookSummary.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.vertical, 20)
+                    .padding(.horizontal, 65)
+
+                Spacer()
 
                 // MARK: - Chapter number
 
@@ -209,7 +235,11 @@ struct PlayerView: View {
 
                 Text(viewStore.currentChapter?.title ?? "")
                     .font(.body)
-                    .padding(8)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(3)
+                    .frame(height: 65)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
 
                 // MARK: - Playback progress
 
@@ -222,11 +252,11 @@ struct PlayerView: View {
 
                     Slider(
                         value: viewStore.binding(
-                            get: { $0.chapterProgress },
+                            get: { $0.playbackPosition.progress },
                             send: PlayerFeature.Action.progressSliderMoved
                         )
                     )
-                    .disabled(duration == nil)
+                    .disabled(duration == 0)
 
                     dateComponentsFormatter.string(from: timeLeft).map {
                         Text($0)
@@ -236,6 +266,20 @@ struct PlayerView: View {
                 }
                 .buttonStyle(.borderless)
                 .padding()
+
+                // MARK: - Speed button
+
+                Button(action: {
+                    viewStore.send(.speedButtonTapped)
+                }, label: {
+                    Text("Speed \(viewStore.state.playbackSpeed.title)")
+                })
+                .font(.callout)
+                .fontWeight(.semibold)
+                .foregroundStyle(.primary)
+                .buttonStyle(.bordered)
+
+                Spacer(minLength: 20)
 
                 // MARK: - Playback controls
 
@@ -287,12 +331,21 @@ struct PlayerView: View {
                     .disabled(viewStore.currentChapterIndex == (viewStore.bookSummary.chapters.count - 1))
                 }
 
-
-                Spacer()
-                    .frame(maxHeight: .infinity)
+                Spacer(minLength: 20)
 
                 // TODO: add some button for ui
+
+                Button(action: {}, label: {
+                    Text("Speed \(viewStore.state.playbackSpeed.title)")
+                })
+                .font(.callout)
+                .fontWeight(.semibold)
+                .foregroundStyle(.primary)
+                .buttonStyle(.bordered)
+
+                Spacer()
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }
@@ -303,7 +356,7 @@ struct PlayerView: View {
     MainActor.assumeIsolated {
         NavigationStack {
             PlayerView(
-                store: Store(initialState: PlayerFeature.State(bookSummary: BookSummary.mock, chapterProgress: 0.3)) {
+                store: Store(initialState: PlayerFeature.State(bookSummary: BookSummary.mock)) {
                     PlayerFeature()
                         ._printChanges()
                 }

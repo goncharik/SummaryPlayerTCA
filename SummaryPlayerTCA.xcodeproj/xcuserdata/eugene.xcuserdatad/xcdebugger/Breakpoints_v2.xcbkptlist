@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "30AE91C5-2BEA-4510-A9FF-8CA8DF8B22CB"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD9A3590-C291-4836-9687-D7B6833A4A93"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummaryPlayerTCA/PlayerFeature.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1AC05997-D98E-41BC-ABF9-BB339B02FE67"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummaryPlayerTCA/PlayerFeature.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E392F630-BDCC-4322-A032-6C4B6621767A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummaryPlayerTCA/Services/AudioPlayer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "audioPlayerDidFinishPlaying(_:successfully:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54AC1CAE-1F33-4123-BC6E-A6BCB9E41D63"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummaryPlayerTCA/Services/AudioPlayerClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "AudioPlayerClient"
+            landmarkType = "21">
+            <Locations>
+               <Location
+                  uuid = "54AC1CAE-1F33-4123-BC6E-A6BCB9E41D63 - 1dc02adc15b9d77e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #4 @Sendable (Swift.Double) async -&gt; () in closure #1 () -&gt; SummaryPlayerTCA.AudioPlayerClient in variable initialization expression of static SummaryPlayerTCA.AudioPlayerClient.liveValue : SummaryPlayerTCA.AudioPlayerClient"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/AudioPlayerClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "424">
+               </Location>
+               <Location
+                  uuid = "54AC1CAE-1F33-4123-BC6E-A6BCB9E41D63 - 1dc02adc15b9d77e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #4 @Sendable (Swift.Double) async -&gt; () in closure #1 () -&gt; SummaryPlayerTCA.AudioPlayerClient in variable initialization expression of static SummaryPlayerTCA.AudioPlayerClient.liveValue : SummaryPlayerTCA.AudioPlayerClient"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/AudioPlayerClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "388">
+               </Location>
+               <Location
+                  uuid = "54AC1CAE-1F33-4123-BC6E-A6BCB9E41D63 - 1dc02adc15b9d77e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #4 @Sendable (Swift.Double) async -&gt; () in closure #1 () -&gt; SummaryPlayerTCA.AudioPlayerClient in variable initialization expression of static SummaryPlayerTCA.AudioPlayerClient.liveValue : SummaryPlayerTCA.AudioPlayerClient"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/AudioPlayerClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "400">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
