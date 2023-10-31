@@ -104,6 +104,9 @@ struct AppView: View {
     public init(store: StoreOf<AppFeature>) {
         self.store = store
         self.viewStore = ViewStore(self.store, observe: ViewState.init)
+
+        let thumbImage = UIImage(systemName: "circle.fill")
+        UISlider.appearance().setThumbImage(thumbImage, for: .normal)
     }
 
     var body: some View {
