@@ -83,20 +83,29 @@ extension AudioPlayerClient: DependencyKey {
             },
             seekProgress: { progress in
                 if let player = context.audioPlayer?.player {
-                    let time = player.duration * min(1, max(0, progress))
-                    await MainActor.run {
-                        if player.isPlaying {
-                            player.pause()
-                            player.currentTime = time
-                            player.play()
-                        } else {
-                            player.currentTime = time
+                    let progress = min(1, max(0, progress))
+                    let time = player.duration * progress
+                    if progress == 1 {
+                        player.stop()
+                        context.continuation?.yield(.playing(PlaybackPosition(
+                            currentTime: context.audioPlayer?.player.duration ?? 0,
+                            duration: context.audioPlayer?.player.duration ?? 0
+                        )))
+                    } else {
+                        await MainActor.run {
+                            if player.isPlaying {
+                                player.pause()
+                                player.currentTime = time
+                                player.play()
+                            } else {
+                                player.currentTime = time
+                            }
                         }
+                        context.continuation?.yield(.playing(PlaybackPosition(
+                            currentTime: context.audioPlayer?.player.currentTime ?? 0,
+                            duration: context.audioPlayer?.player.duration ?? 0
+                        )))
                     }
-                    context.continuation?.yield(.playing(PlaybackPosition(
-                        currentTime: context.audioPlayer?.player.currentTime ?? 0,
-                        duration: context.audioPlayer?.player.duration ?? 0
-                    )))
                 }
             },
             speed: { speed in
@@ -112,7 +121,8 @@ extension AudioPlayerClient: DependencyKey {
 
 extension DependencyValues {
     var audioPlayer: AudioPlayerClient {
-        self[AudioPlayerClient.self]
+        get { self[AudioPlayerClient.self] }
+        set { self[AudioPlayerClient.self] = newValue }
     }
 }
 

@@ -7,38 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CD9A3590-C291-4836-9687-D7B6833A4A93"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SummaryPlayerTCA/PlayerFeature.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1AC05997-D98E-41BC-ABF9-BB339B02FE67"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SummaryPlayerTCA/PlayerFeature.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E392F630-BDCC-4322-A032-6C4B6621767A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -62,13 +30,13 @@
             filePath = "SummaryPlayerTCA/Services/AudioPlayerClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "AudioPlayerClient"
-            landmarkType = "21">
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "liveValue"
+            landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "54AC1CAE-1F33-4123-BC6E-A6BCB9E41D63 - 1dc02adc15b9d77e"
+                  uuid = "54AC1CAE-1F33-4123-BC6E-A6BCB9E41D63 - 1dc02adc15b9d6b0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -78,41 +46,432 @@
                   urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/AudioPlayerClient.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "552">
+               </Location>
+               <Location
+                  uuid = "54AC1CAE-1F33-4123-BC6E-A6BCB9E41D63 - 55c7c8b388413ccb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #4 @Sendable (Swift.Double) async -&gt; () in closure #1 () -&gt; SummaryPlayerTCA.AudioPlayerClient in variable initialization expression of static SummaryPlayerTCA.AudioPlayerClient.liveValue : SummaryPlayerTCA.AudioPlayerClient"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/AudioPlayerClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "54AC1CAE-1F33-4123-BC6E-A6BCB9E41D63 - 386c70820f869b78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #4 @Sendable (Swift.Double) async -&gt; () in closure #1 () -&gt; SummaryPlayerTCA.AudioPlayerClient in variable initialization expression of static SummaryPlayerTCA.AudioPlayerClient.liveValue : SummaryPlayerTCA.AudioPlayerClient"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/AudioPlayerClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
                   endingLineNumber = "85"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "54AC1CAE-1F33-4123-BC6E-A6BCB9E41D63 - 386c70820f869ab6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #4 @Sendable (Swift.Double) async -&gt; () in closure #1 () -&gt; SummaryPlayerTCA.AudioPlayerClient in variable initialization expression of static SummaryPlayerTCA.AudioPlayerClient.liveValue : SummaryPlayerTCA.AudioPlayerClient"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/AudioPlayerClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "54AC1CAE-1F33-4123-BC6E-A6BCB9E41D63 - ec64a2031697ab44"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor @Sendable () -&gt; () in closure #4 @Sendable (Swift.Double) async -&gt; () in closure #1 () -&gt; SummaryPlayerTCA.AudioPlayerClient in variable initialization expression of static SummaryPlayerTCA.AudioPlayerClient.liveValue : SummaryPlayerTCA.AudioPlayerClient"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/AudioPlayerClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5BB24DAD-C8D3-4FDD-9CC5-E6EA23E1872C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummaryPlayerTCA/Services/StoreClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "fetchProducts()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5BB24DAD-C8D3-4FDD-9CC5-E6EA23E1872C - 9c7ebfdcd4da37ee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SummaryPlayerTCA.StoreClientImpl.fetchProducts() async -&gt; ()"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/StoreClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "5BB24DAD-C8D3-4FDD-9CC5-E6EA23E1872C - f5c21f0b531375fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for SummaryPlayerTCA.StoreClientImpl.fetchProducts() async -&gt; ()"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/StoreClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "5BB24DAD-C8D3-4FDD-9CC5-E6EA23E1872C - f5c21f0b5313761a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for SummaryPlayerTCA.StoreClientImpl.fetchProducts() async -&gt; ()"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/StoreClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4CC83175-F185-472F-A690-BC993AAFCAF2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummaryPlayerTCA/Services/StoreClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "purchase(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4CC83175-F185-472F-A690-BC993AAFCAF2 - bbad161a443b2f5f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for SummaryPlayerTCA.StoreClientImpl.purchase(StoreKit.Product) async throws -&gt; ()"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/StoreClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "4CC83175-F185-472F-A690-BC993AAFCAF2 - 688c9049f9606b5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SummaryPlayerTCA.StoreClientImpl.purchase(StoreKit.Product) async throws -&gt; ()"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/StoreClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "840">
+               </Location>
+               <Location
+                  uuid = "4CC83175-F185-472F-A690-BC993AAFCAF2 - acf2b4c79421364d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for SummaryPlayerTCA.StoreClientImpl.purchase(StoreKit.Product) async throws -&gt; ()"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/StoreClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "4CC83175-F185-472F-A690-BC993AAFCAF2 - bbad161a443b2ebe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for SummaryPlayerTCA.StoreClientImpl.purchase(StoreKit.Product) async throws -&gt; ()"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/StoreClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "4CC83175-F185-472F-A690-BC993AAFCAF2 - bbad161a443b2f5f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for SummaryPlayerTCA.StoreClientImpl.purchase(StoreKit.Product) async throws -&gt; ()"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/StoreClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "39A5140F-BF12-4AC7-BDE0-10B5DD95B4EA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummaryPlayerTCA/Services/StoreClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "39A5140F-BF12-4AC7-BDE0-10B5DD95B4EA - 39adb08125e7862a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SummaryPlayerTCA.StoreClientImpl.init() -&gt; SummaryPlayerTCA.StoreClientImpl"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/StoreClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "39A5140F-BF12-4AC7-BDE0-10B5DD95B4EA - 631f29ac438cc234"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SummaryPlayerTCA.StoreClientImpl.init() -&gt; SummaryPlayerTCA.StoreClientImpl"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/StoreClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "960">
+               </Location>
+               <Location
+                  uuid = "39A5140F-BF12-4AC7-BDE0-10B5DD95B4EA - 677e25f786dc352e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for closure #1 @Sendable () async -&gt; () in SummaryPlayerTCA.StoreClientImpl.init() -&gt; SummaryPlayerTCA.StoreClientImpl"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/StoreClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "39A5140F-BF12-4AC7-BDE0-10B5DD95B4EA - 39adb08125e786cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SummaryPlayerTCA.StoreClientImpl.init() -&gt; SummaryPlayerTCA.StoreClientImpl"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/StoreClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "39A5140F-BF12-4AC7-BDE0-10B5DD95B4EA - 39adb08125e7862a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SummaryPlayerTCA.StoreClientImpl.init() -&gt; SummaryPlayerTCA.StoreClientImpl"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/StoreClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BEA68769-7C31-4F32-9FC7-39893EDDAB9A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummaryPlayerTCA/Services/StoreClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "liveValue"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "BEA68769-7C31-4F32-9FC7-39893EDDAB9A - 667a57fd5fabb40f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 (Swift.AsyncStream&lt;Swift.String&gt;.Continuation) -&gt; () in closure #1 @Sendable () -&gt; Swift.AsyncStream&lt;Swift.String&gt; in static SummaryPlayerTCA.StoreClient.liveValue.getter : SummaryPlayerTCA.StoreClient"
+                  moduleName = "SummaryPlayerTCA"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/StoreClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
                   offsetFromSymbolStart = "424">
                </Location>
                <Location
-                  uuid = "54AC1CAE-1F33-4123-BC6E-A6BCB9E41D63 - 1dc02adc15b9d77e"
+                  uuid = "BEA68769-7C31-4F32-9FC7-39893EDDAB9A - 667a57fd5fabb40f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #4 @Sendable (Swift.Double) async -&gt; () in closure #1 () -&gt; SummaryPlayerTCA.AudioPlayerClient in variable initialization expression of static SummaryPlayerTCA.AudioPlayerClient.liveValue : SummaryPlayerTCA.AudioPlayerClient"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 (Swift.AsyncStream&lt;Swift.String&gt;.Continuation) -&gt; () in closure #1 @Sendable () -&gt; Swift.AsyncStream&lt;Swift.String&gt; in static SummaryPlayerTCA.StoreClient.liveValue.getter : SummaryPlayerTCA.StoreClient"
                   moduleName = "SummaryPlayerTCA"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/AudioPlayerClient.swift"
+                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/StoreClient.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "388">
-               </Location>
-               <Location
-                  uuid = "54AC1CAE-1F33-4123-BC6E-A6BCB9E41D63 - 1dc02adc15b9d77e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #4 @Sendable (Swift.Double) async -&gt; () in closure #1 () -&gt; SummaryPlayerTCA.AudioPlayerClient in variable initialization expression of static SummaryPlayerTCA.AudioPlayerClient.liveValue : SummaryPlayerTCA.AudioPlayerClient"
-                  moduleName = "SummaryPlayerTCA"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eugene/Documents/Development/Personal/SummaryPlayerTCA/SummaryPlayerTCA/Services/AudioPlayerClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "400">
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "832">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F9DF853-19E5-46B7-90EB-A635C85AD947"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummaryPlayerTCA/Services/StoreClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "liveValue"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2CFF49CE-B639-4AF7-B70E-B1B6865B1953"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummaryPlayerTCA/PlayerFeature.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB45FEA8-C3B1-41C8-9948-53B81E94ABCC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummaryPlayerTCA/PlayerFeature.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B07B4BBC-762B-4769-879B-48CF4B7B5B03"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummaryPlayerTCA/PlayerFeature.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

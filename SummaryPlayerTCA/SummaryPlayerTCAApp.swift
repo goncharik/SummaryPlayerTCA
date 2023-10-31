@@ -5,13 +5,12 @@ import SwiftUI
 struct SummaryPlayerTCAApp: App {
     var body: some Scene {
         WindowGroup {
-            PlayerView(
-                store: Store(initialState: PlayerFeature.State(bookSummary: BookSummary.mock)) {
-                    PlayerFeature()
+            AppView(
+                store: Store(initialState: AppFeature.State(book: BookSummary.mock)) {
+                    AppFeature()
                         ._printChanges()
                 }
             )
-//            ContentView()
         }
     }
 }

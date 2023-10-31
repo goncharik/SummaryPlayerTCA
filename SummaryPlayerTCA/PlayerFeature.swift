@@ -12,6 +12,8 @@ struct BookSummary: Identifiable, Equatable {
     var title: String
     var imageName: String
     var chapters: [Chapter]
+
+    var purchaseId: String
 }
 
 extension BookSummary {
@@ -22,7 +24,8 @@ extension BookSummary {
         chapters: [
             .init(title: "Chapter 1. Some long text. Some long text. Some long text. Some long text. Some long text. Some long text", audioFileName: "summary_0", duration: 180),
             .init(title: "Chapter 2", audioFileName: "summary_1", duration: 102),
-        ]
+        ],
+        purchaseId: "me.honcharenko.SummaryPlayerTCA.subscription"
     )
 }
 
@@ -107,7 +110,7 @@ struct PlayerFeature: Reducer {
                 switch playback {                    
                 case let .playing(position):
                     state.playbackPosition = position
-                    return .none
+                    return .send(.updateChapterIfNeeded, animation: .default)
                 case let .pause(position):
                     state.playbackPosition = position
                     return .none
@@ -146,15 +149,17 @@ struct PlayerFeature: Reducer {
             case .fastForwardButtonTapped:
                 var playbackPosition = state.playbackPosition
                 playbackPosition.currentTime += 10
-                return .run { [playbackPosition] _ in
-                    await audioPlayer.seekProgress(playbackPosition.progress)
+                if playbackPosition.currentTime > playbackPosition.duration {
+                    playbackPosition.currentTime = playbackPosition.duration
                 }
+                return .send(.progressSliderMoved(playbackPosition.progress))
             case .rewindButtonTapped:
                 var playbackPosition = state.playbackPosition
                 playbackPosition.currentTime -= 5
-                return .run { [playbackPosition] _ in
-                    await audioPlayer.seekProgress(playbackPosition.progress)
+                if playbackPosition.currentTime < 0 {
+                    playbackPosition.currentTime = 0
                 }
+                return .send(.progressSliderMoved(playbackPosition.progress))
             case let .progressSliderMoved(progress):
                 var playbackPosition = state.playbackPosition
                 playbackPosition.currentTime = progress * playbackPosition.duration
@@ -331,19 +336,7 @@ struct PlayerView: View {
                     .disabled(viewStore.currentChapterIndex == (viewStore.bookSummary.chapters.count - 1))
                 }
 
-                Spacer(minLength: 20)
-
-                // TODO: add some button for ui
-
-                Button(action: {}, label: {
-                    Text("Speed \(viewStore.state.playbackSpeed.title)")
-                })
-                .font(.callout)
-                .fontWeight(.semibold)
-                .foregroundStyle(.primary)
-                .buttonStyle(.bordered)
-
-                Spacer()
+                Spacer(minLength: 70)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
